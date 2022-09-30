@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/notes-tailwindcss/static/css/main.3e718616.css",
+    "main.js": "/notes-tailwindcss/static/js/main.b9474673.js",
+    "static/media/concrete-1646788.jpg": "/notes-tailwindcss/static/media/concrete-1646788.dde404c431c920d252a8.jpg",
+    "index.html": "/notes-tailwindcss/index.html",
+    "main.3e718616.css.map": "/notes-tailwindcss/static/css/main.3e718616.css.map",
+    "main.b9474673.js.map": "/notes-tailwindcss/static/js/main.b9474673.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3e718616.css",
+    "static/js/main.b9474673.js"
+  ]
+}
