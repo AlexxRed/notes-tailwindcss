@@ -1,31 +1,24 @@
 import { IStatistic } from '../../services/types/statistic.type';
-import {
-    ItemContainer,
-    ItemHeader,
-    ItemInfo,
-    ItemName,
-    IdeaIcon,
-    ThoughtIcon,
-    TasksIcon,
-    Wrapper,
-} from './StatisticItem.styled';
+import EmojiObjectsIcon from '@mui/icons-material/EmojiObjects';
+import PsychologyIcon from '@mui/icons-material/Psychology';
+import TaskIcon from '@mui/icons-material/Task';
 
 export const StatisticItem = ({ item }: { item: IStatistic }) => {
 
 
     return (
-        <ItemContainer>
-            <ItemHeader>
-                <Wrapper>
-                    {item.category === 'Idea' && <IdeaIcon />}
-                    {item.category === 'Task' && <TasksIcon />}
-                    {item.category === 'Random Thought' && <ThoughtIcon/>}
-                    <ItemName>{item.category}</ItemName>
-                </Wrapper>
+        <li className='p-5 m-8 shadow-xl shadow-gray-600'>
+            <div className='flex flex-row justify-between mb-5'>
+                <div className='flex justify-center items-center'>
+                    {item.category === 'Idea' && <EmojiObjectsIcon color='secondary' className='mr-5' />}
+                    {item.category === 'Task' && <TaskIcon color='secondary' className='mr-5' />}
+                    {item.category === 'Random Thought' && <PsychologyIcon color='secondary' className='mr-5'/>}
+                    <p className=' text-2xl'>{item.category}</p>
+                </div>
 
-            </ItemHeader>
-            <ItemInfo>ACTIVE: {item.active}</ItemInfo>
-            <ItemInfo>ARCHIVED: {item.archived}</ItemInfo>
-        </ItemContainer>
+            </div>
+            <p className=' text-xl'>ACTIVE: {item.active}</p>
+            <p className=' text-xl'>ARCHIVED: {item.archived}</p>
+        </li>
     );
 };

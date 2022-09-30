@@ -1,5 +1,4 @@
 import { useDispatch } from 'react-redux';
-import { Box } from './CreateNotePage.styled'
 import  CreateFormComponent from '../../components/CreateNoteForm/CreateForm.component'
 import { INote } from '../../services/types/note.types';
 import { addNote } from '../../redux/notesSlice';
@@ -30,9 +29,9 @@ function CreateNotePage() {
     }
 
     return (
-        <Box>
+        <div className=' flex-row h-screen bg-no-repeat m-0 pt-5'>
             <CreateFormComponent data={ data } onSave={ onSave } title='Create Note' />
-        </Box>
+        </div>
     )
 };
 

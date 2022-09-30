@@ -6,6 +6,8 @@
   "dependencies": {
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
+    "@headlessui/react": "^1.7.2",
+    "@heroicons/react": "^2.0.11",
     "@mui/icons-material": "^5.8.4",
     "@mui/material": "^5.8.7",
     "@reduxjs/toolkit": "^1.8.3",
@@ -59,6 +61,9 @@
   },
   "devDependencies": {
     "@types/redux-logger": "^3.0.9",
-    "@types/uuid": "^8.3.4"
+    "@types/uuid": "^8.3.4",
+    "autoprefixer": "^10.4.12",
+    "postcss": "^8.4.16",
+    "tailwindcss": "^3.1.8"
   }
 }

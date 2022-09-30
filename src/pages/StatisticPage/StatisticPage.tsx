@@ -1,5 +1,4 @@
 import { useSelector } from 'react-redux';
-import { Box, Text } from './StatisticPage.styled';
 import { StatisticList } from '../../components/StatisticList/StatisticList.component';
 import { getNotesList, getArchiveList } from '../../redux/notesSlice';
 import { INote } from '../../services/types/note.types';
@@ -39,10 +38,10 @@ function StatisticPage() {
     ];
 
     return (
-        <Box>
-            <Text>Statistic</Text>
+        <div className=' flex-row h-screen bg-no-repeat m-0 pt-5'>
+            <h1 className='flex ml-auto mr-auto mt-auto mb-5 justify-center items-center text-6xl text-gray-600 w-full'>Statistic</h1>
             <StatisticList data={statistic}/>
-        </Box>
+        </div>
         
     )
 };

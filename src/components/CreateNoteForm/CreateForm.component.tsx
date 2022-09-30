@@ -1,10 +1,11 @@
 import { FC } from 'react';
 import { Formik, FormikHelpers, ErrorMessage } from 'formik';
-import { Box, CreateNote, FormTitle, FormButton, InputForm, LableForm, Wrapper, FormText } from './CreateForm.styled';
 import createdNoteValidation from '../../services/consts/validation/createdNoteValidation';
 import { INote } from '../../services/types/note.types';
 import { COLORS } from '../../services/theme';
 import { useNavigate } from "react-router-dom";
+import { Form, Field  } from 'formik';
+
 
 interface IProps {
     data: INote;
@@ -24,62 +25,62 @@ const CreateFormComponent: FC<IProps> = ({ data, onSave, title }) => {
     const renderError = (message: string) => <div style={{ color: COLORS.red }}>{message}</div>;
 
     return (
-    <Box>
-        <FormTitle>{title}</FormTitle>
+    <div className='flex text-center justify-center flex-wrap bg-gray-400 rounded-lg p-10 mt-30 ml-auto mr-auto max-w-xl'>
+        <h1 className=' font-bold flex justify-center align-center mt-auto w-full' >{title}</h1>
             <Formik
                 initialValues={data}
                 onSubmit={handleSubmit}
                 validationSchema={createdNoteValidation}>
                 
-                <CreateNote autoComplete="off">
-                <FormText>Category</FormText>
-                <Wrapper>
-                    <LableForm htmlFor="task">
+                <Form className='block w-80' autoComplete="off">
+                <p className='block p-5 w-full'>Category</p>
+                <div className='flex align-center justify-around'>
+                    <label className='flex flex-col' htmlFor="task">
                         Task
-                        <InputForm type="radio" name="category" value="Task" />
-                    </LableForm>
+                        <Field className='flex box-content outline-none p-8 mb-8 hover:bg-gray-300' type="radio" name="category" value="Task" />
+                    </label>
                             <ErrorMessage name="task" render={renderError} />
-                    <LableForm htmlFor="randomthought">
+                    <label className='flex flex-col' htmlFor="randomthought">
                         Random Thought
-                        <InputForm type="radio" name="category" value="Random Thought" />
-                    </LableForm>
+                        <Field className='flex box-content outline-none p-4 mb-8 hover:bg-gray-300' type="radio" name="category" value="Random Thought" />
+                    </label>
                             <ErrorMessage name="randomthought" render={renderError} />
-                    <LableForm htmlFor="idea">
+                    <label className='flex flex-col' htmlFor="idea">
                         Idea
-                        <InputForm type="radio" name="category" value="Idea" />
-                    </LableForm>
+                        <Field className='flex box-content outline-none p-8 mb-8 hover:bg-gray-300' type="radio" name="category" value="Idea" />
+                    </label>
                             <ErrorMessage name="idea" render={renderError} />
-                </Wrapper>
-                <LableForm htmlFor="name">
-                    <FormText>Name</FormText>
-                    <InputForm type="text" name="name" placeholder="Note name" />
-                </LableForm>
+                </div>
+                <label className='flex flex-col' htmlFor="name">
+                    <p className='block p-5 w-full'>Name</p>
+                    <Field className='flex box-content outline-none p-2 mb-8 hover:bg-gray-300 w-full' type="text" name="name" placeholder="Note name" />
+                </label>
                 <ErrorMessage name="name" render={renderError} />
                         
-                <LableForm htmlFor="content">
-                    <FormText>Description</FormText>
-                    <InputForm
+                <label className='flex flex-col' htmlFor="content">
+                    <p className='block p-5 w-full'>Description</p>
+                    <Field className='flex box-content outline-none p-2 mb-8 hover:bg-gray-300 w-full'
                     component="textarea"
                     rows="5"
                     name="content"
                     placeholder="Your Note here"
                     />
-                </LableForm>
+                </label>
                 <ErrorMessage name="content" render={renderError} />
 
-                <LableForm htmlFor="dates">
-                    <FormText>Choose a date</FormText>
-                    <InputForm type="date" name="dates"/>
-                </LableForm>
+                <label className='flex flex-col' htmlFor="dates">
+                    <p className='block p-5 w-full'>Choose a date</p>
+                    <Field className='flex box-content outline-none p-2 mb-8 hover:bg-gray-300 w-full' type="date" name="dates"/>
+                </label>
                 <ErrorMessage name="dates" render={renderError} />
                     {title === 'Create Note' ? (
-                        <FormButton type="submit">Create</FormButton>
+                        <button className='block mr-auto ml-auto text-center w-60 bg-white rounded p-5 hover:bg-blue-700' type="submit">Create</button>
                     ) : (
-                        <FormButton type="submit">Edit</FormButton>
+                        <button className='block mr-auto ml-auto text-center w-60 bg-white rounded p-5 hover:bg-blue-700' type="submit">Edit</button>
                     )}
-                    </CreateNote>
+                    </Form>
         </Formik>
-        </Box>
+        </div>
     );
 };
 
