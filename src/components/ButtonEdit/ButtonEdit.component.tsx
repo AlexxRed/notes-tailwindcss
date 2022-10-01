@@ -1,14 +1,11 @@
 import { refs } from '../../services/consts/refs';
-import { Link } from 'react-router-dom';
-import EditIcon from '@mui/icons-material/Edit';
+import { ButtonEdit, ButtonIcon } from './ButtonEdit.styled';
 
-
-
-const EditButton = ({ onClick }: { onClick: () => void }) => {
+function EditButton({ onClick }: { onClick: () => void }) {
   return (
-    <Link className='cursor-pointer hover:bg-red-700 rounded w-6' to={refs.editNote} onClick={onClick}>
-      <EditIcon fontSize="medium" color="primary" />
-    </Link>
+    <ButtonEdit to={refs.editNote} onClick={onClick}>
+      <ButtonIcon />
+    </ButtonEdit>
   );
 };
 
