@@ -38,7 +38,7 @@ function StatisticPage() {
     ];
 
     return (
-        <div className=' flex-row h-screen bg-no-repeat m-0 pt-5'>
+        <div className=' flex-row h-screen bg-no-repeat m-0 pt-5 mt-12'>
             <h1 className='flex ml-auto mr-auto mt-auto mb-5 justify-center items-center text-6xl text-gray-600 w-full'>Statistic</h1>
             <StatisticList data={statistic}/>
         </div>

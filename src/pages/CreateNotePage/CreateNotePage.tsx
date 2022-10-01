@@ -29,7 +29,7 @@ function CreateNotePage() {
     }
 
     return (
-        <div className=' flex-row h-screen bg-no-repeat m-0 pt-5'>
+        <div className=' flex-row h-screen bg-no-repeat m-0 pt-5 mt-12'>
             <CreateFormComponent data={ data } onSave={ onSave } title='Create Note' />
         </div>
     )

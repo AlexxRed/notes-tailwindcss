@@ -11,8 +11,8 @@ function HomePage() {
     
 
     return (
-        <div className=' flex-row h-screen bg-no-repeat m-0 pt-5'>
-            <h1 className='flex ml-auto mr-auto mt-auto justify-center items-center text-6xl text-gray-600 w-full mb-5'>Notes</h1>
+        <div className=' flex-row h-screen bg-no-repeat m-0 pt-5 mt-12'>
+            <h1 className='flex ml-auto mr-auto mt-auto justify-center items-center text-6xl text-gray-600 w-full mb-10'>Notes</h1>
             <CreateButton name={'Create new Note'} />
             <NoteList data={notesList}/>
         </div>
